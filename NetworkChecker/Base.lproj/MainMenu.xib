@@ -14,6 +14,9 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NetworkChecker" customModuleProvider="target">
             <connections>
+                <outlet property="IPAddr1" destination="ExJ-ne-dYZ" id="FkK-E1-qaD"/>
+                <outlet property="StartBtn" destination="M0L-R8-nAE" id="vkx-WK-shh"/>
+                <outlet property="StopBtn" destination="Vty-a8-NEa" id="vBO-x2-xKs"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -689,16 +692,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wyi-WB-Ncs">
-                        <rect key="frame" x="18" y="314" width="61" height="17"/>
+                        <rect key="frame" x="18" y="307" width="69" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="IP Adress" id="xSV-Y6-UNR">
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="IP Address" id="xSV-Y6-UNR">
                             <font key="font" usesAppearanceFont="YES"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ExJ-ne-dYZ">
-                        <rect key="frame" x="85" y="311" width="246" height="22"/>
+                        <rect key="frame" x="20" y="277" width="142" height="22"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="895-NW-o5t">
                             <font key="font" metaFont="system"/>
@@ -706,8 +709,31 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vty-a8-NEa">
+                        <rect key="frame" x="391" y="13" width="69" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wzs-CK-Bbc">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="Stop:" target="Voe-Tx-rLC" id="rpv-KP-liI"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkb-wd-f0e">
+                        <rect key="frame" x="322" y="13" width="70" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M0L-R8-nAE">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="Start:" target="Voe-Tx-rLC" id="aFv-M5-nL9"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="33" y="14"/>
         </window>
     </objects>
 </document>
