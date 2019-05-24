@@ -41,6 +41,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     {
         StartBtn.isEnabled = false;
         StopBtn.isEnabled = true;
+        let ip1 = IPAddr1.stringValue;
+        
+        let ping = Process();
+        ping.executableURL = URL(fileURLWithPath: "/sbin/ping");
+        ping.arguments = [ip1];
+        
+        let pipe = Pipe();
+        ping.standardOutput = pipe;
+        
+        ping.launch();
+        
+        //pingCmnd(ip: ip1);
     }
     
     
@@ -49,5 +61,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         StartBtn.isEnabled = true;
         StopBtn.isEnabled = false;
     }
+   /*
+    func pingCmnd(ip:String)
+    {
+        let ping = Process();
+        ping.executableURL = URL(fileURLWithPath: "/sbin/ping");
+        ping.arguments = [ip];
+        
+        let pipe = Pipe();
+        ping.standardOutput = pipe;
+        
+        ping.launch();
+       
+    }*/
 }
 
