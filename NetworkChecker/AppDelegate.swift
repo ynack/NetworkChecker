@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
 
     @IBOutlet weak var IPAddr1: NSTextField!
+    @IBOutlet weak var ResultField: NSTextField!
     
     @IBOutlet weak var StartBtn: NSButtonCell!
     @IBOutlet weak var StopBtn: NSButton!
@@ -59,11 +60,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         ping.executableURL = URL(fileURLWithPath: "/sbin/ping");
         ping.arguments = [ip];
         
-        //let pipe = Pipe();
-        //ping.standardOutput = pipe;
+        let pipe = Pipe();
+        ping.standardOutput = pipe;
         
         ping.launch();
-       
+        
+        
     }
 }
 
